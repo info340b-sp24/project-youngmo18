@@ -8,7 +8,7 @@ This repository contains code for an interactive information web app, created fo
 - Worker info: username, password (salt & hash), ID
 - Client login functionality: book airline
 - Client info: username, password (salt & hash), ID, scheduled appointments
-- Airline post features: # of seats, date, flight name, flight number
+- Airline post features: # of seats, date, flight name, flight number, from, to
 
 **Post MVP**
 - Integrate chatbot into website to help users

@@ -7,7 +7,7 @@ This repository contains code for an interactive information web app, created fo
 - Worker login functionality: post or remove airline schedule
 - Worker info: username, password (salt & hash), ID
 - Client login functionality: book airline
-- Client info: username, password (salt & hash), ID
+- Client info: username, password (salt & hash), ID, scheduled appointments
 - Airline post features: # of seats, date, flight name, flight number
 
 **Post MVP**

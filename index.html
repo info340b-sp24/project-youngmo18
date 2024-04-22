@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>INFO 340 Project Proposal</title>
+    <title>INFO 340 Project</title>
     <meta name="author" content="Mo Young" />
     <meta name="description" content="this is the main page for the JavaAir" />
     <meta
@@ -22,54 +22,66 @@
         <h1>JavaAir</h1>
         <div>
           <!-- change to href -->
-          <a href="intro.html">Home</a>
-          <a href="index.html">Book</a>
-          <a href="contact.html">Contact</a>
-          <a href="login.html">Login</a>
+          <ul>
+            <li>
+              <a href="intro.html">Home</a>
+            </li>
+            <li>
+              <a href="index.html">Book</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
     <main>
-      <section>
-        <h2>Find Flights</h2>
-        <form id="searchFlightsForm">
-          <div class="form-group">
-            <label for="from">From:</label>
+      <section class="section-flight">
+        <section class="flight-container">
+          <h1>Find Flights</h1>
+          <form id="search-flights-form">
+            <label for="from">From</label>
             <input type="text" id="from" name="from" required />
-          </div>
-          <div class="form-group">
-            <label for="to">To:</label>
+            <label for="to">To</label>
             <input type="text" id="to" name="to" required />
-          </div>
-          <div class="form-group">
-            <label for="departureDate">Departure Date:</label>
+            <label for="departureDate">Departure Date</label>
             <input
               type="date"
               id="departureDate"
               name="departureDate"
               required
             />
-          </div>
-          <button type="submit">Search Flights</button>
-        </form>
+            <button type="submit">Search Flights</button>
+          </form>
+        </section>
       </section>
-      <section>
-        <h2>Available Flights</h2>
-        <article class="flightsList">
+      <section class="places-section">
+        <h2>✈️ Available Flights ✈️</h2>
+        <article class="searchFlightsForm">
           <div>
-            <img src="img/image1.jpg" alt="gili" />
+            <a href="flightdetails.html">
+              <img src="img/image1.jpg" alt="gili" />
+            </a>
             <p>From: Jakarta</p>
             <p>To: Gili Tarawang</p>
             <p>Date: 07/18/2024</p>
           </div>
           <div>
-            <img src="img/image2.jpg" alt="nusa-penida" />
+            <a href="flightdetails.html">
+              <img src="img/image2.jpg" alt="nusa-penida" />
+            </a>
             <p>From: Jakarta</p>
             <p>To: Nusa Penida</p>
             <p>Date: 07/18/2024</p>
           </div>
           <div>
-            <img src="img/image3.jpg" alt="bali" />
+            <a href="flightdetails.html">
+              <img src="img/image3.jpg" alt="bali" />
+            </a>
             <p>From: Jakarta</p>
             <p>To: Bali</p>
             <p>Date: 07/18/2024</p>

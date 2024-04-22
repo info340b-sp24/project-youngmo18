@@ -19,24 +19,32 @@
       rel="stylesheet"
     />
   </head>
-  <body class="home">
+  <body>
     <header>
       <nav>
         <h1>JavaAir</h1>
         <div>
           <!-- change to href -->
-          <a href="intro.html">Home</a>
-          <a href="index.html">Book</a>
-          <a href="contact.html">Contact</a>
-          <a href="login.html">Login</a>
+          <ul>
+            <li>
+              <a href="intro.html">Home</a>
+            </li>
+            <li>
+              <a href="index.html">Book</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
     <main>
-      <article class="hidden">
-        <section class="splash-box">
-          <h2>Login</h2>
-        </section>
+      <article class="login-container">
+        <h1>Login</h1>
         <section class="login-window">
           <form id="login-form" method="post">
             <label for="uname"><b>Username</b></label>

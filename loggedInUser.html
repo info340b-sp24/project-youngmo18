@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>INFO 340 Project Proposal</title>
     <meta name="author" content="Mo Young" />
-    <meta name="description" content="this is the main page for the JavaAir" />
+    <meta
+      name="description"
+      content="this is the logged-in user page for the JavaAir"
+    />
     <meta
       name="viewport"
       content="width=device-width,  initial-scale=1, shrink-to-fit=no"
@@ -24,8 +27,9 @@
           <!-- change to href -->
           <a href="intro.html">Home</a>
           <a href="index.html">Book</a>
+          <a href="bookingHistory.html">History</a>
           <a href="contact.html">Contact</a>
-          <a href="login.html">Login</a>
+          <a href="login.html">Logout</a>
         </div>
       </nav>
     </header>
@@ -50,31 +54,15 @@
               required
             />
           </div>
-          <button type="submit">Search Flights</button>
+          <!-- <button type="submit">Search Flights</button> -->
+          <a href="searchExample.html">Search Flights</a>
         </form>
       </section>
       <section>
         <h2>Available Flights</h2>
-        <article class="flightsList">
-          <div>
-            <img src="img/image1.jpg" alt="gili" />
-            <p>From: Jakarta</p>
-            <p>To: Gili Tarawang</p>
-            <p>Date: 07/18/2024</p>
-          </div>
-          <div>
-            <img src="img/image2.jpg" alt="nusa-penida" />
-            <p>From: Jakarta</p>
-            <p>To: Nusa Penida</p>
-            <p>Date: 07/18/2024</p>
-          </div>
-          <div>
-            <img src="img/image3.jpg" alt="bali" />
-            <p>From: Jakarta</p>
-            <p>To: Bali</p>
-            <p>Date: 07/18/2024</p>
-          </div>
-        </article>
+        <ul class="flightsList">
+          <!-- Search results will be populated here -->
+        </ul>
       </section>
     </main>
     <footer>

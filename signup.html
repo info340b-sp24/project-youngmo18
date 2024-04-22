@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>INFO 340 Project Proposal</title>
     <meta name="author" content="Mo Young" />
-    <meta name="description" content="this is the login page for the JavaAir" />
+    <meta
+      name="description"
+      content="this is the signup page for the JavaAir"
+    />
     <meta
       name="viewport"
       content="width=device-width,  initial-scale=1, shrink-to-fit=no"
@@ -30,9 +33,21 @@
       </nav>
     </header>
     <main>
-      <h2>Who are you?</h2>
-      <a href="loginWorker.html">Worker</a>
-      <a href="loginUser.html">User</a>
+      <article id="login" class="hidden">
+        <section class="splash-box">
+          <h2>Login</h2>
+        </section>
+        <section id="login-window">
+          <form id="login-form" method="post">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" name="username" id="uname" required />
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="password" id="psw" required />
+            <!-- <button id="login-btn">Login</button> -->
+            <a href="signedUp.html">Sign Up</a>
+          </form>
+        </section>
+      </article>
     </main>
     <footer>
       <div class="footer-content">

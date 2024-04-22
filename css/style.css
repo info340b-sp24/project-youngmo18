@@ -10,61 +10,16 @@ body {
   font-weight: 600;
 }
 
-nav {
-  display: flex;
-  justify-content:space-between;
-  color: white;
-}
-
-nav h1{
-  margin-left: 50px;
-}
-
-nav ul {
-  overflow: hidden;
-  position: static;
-  top: 0;
-  padding-right: 0;
-  padding-left: 50px;
-}
-
-nav ul li {
-  display: inline-block;
-  float: left;
-  font-weight: bold;
-}
-
-li {
-  list-style: none;
-}
-
-header nav a {
-  text-decoration: none;
-  color: white;
-  margin: 0 10px;
-  /* text-shadow: 1px 1px #153c43; */
-}
-
-footer a {
-  text-decoration: none;
-  color: #153c43;
-}
-
 main {
   padding: 20px;
   text-align: center;
   height: 70%;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-#uname,
-#psw {
-  width: 80%;
-  padding: 8px;
-  margin-top: 5px;
+nav {
+  display: flex;
+  justify-content:space-between;
+  color: white;
 }
 
 button {
@@ -87,6 +42,62 @@ footer {
   padding: 10px;
   width: 100%;
   margin-top: auto;
+}
+
+input {
+  border: none;
+  background-color: rgb(225, 223, 223);
+  height: 35px;
+  border-radius: 35px;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+nav h1{
+  margin-left: 50px;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+  font-weight: bold;
+}
+
+nav ul {
+  overflow: hidden;
+  position: static;
+  top: 0;
+  padding-right: 0;
+  padding-left: 50px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  /* text-shadow: 1px 1px #153c43; */
+}
+
+footer a {
+  text-decoration: none;
+  color: #153c43;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+#uname,
+#psw {
+  width: 80%;
+  padding: 8px;
+  margin-top: 5px;
 }
 
 .intro {
@@ -115,10 +126,6 @@ footer {
 
 }
 
-h2 {
-  font-size: 30px;
-}
-
 .places-section {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -138,13 +145,6 @@ h2 {
   background-color: white;
   border-radius: 10px;
   color: black;
-}
-
-input {
-  border: none;
-  background-color: rgb(225, 223, 223);
-  height: 35px;
-  border-radius: 35px;
 }
 
 .searchFlightsForm img {

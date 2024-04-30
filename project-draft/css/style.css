@@ -244,6 +244,11 @@ body main h1 {
   font-size: 40px;
 }
 
+.home {
+  /* background-image: url("../img/wallpaper10.jpg");
+  background-size: cover; */
+}
+
 .home main h1 {
   font-size: 60px;
   padding-top: 100px;

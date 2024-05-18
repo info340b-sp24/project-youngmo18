@@ -2,12 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import FLIGHTS from './data/flights.json';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBtoktdlmxYE8l812SiRHWmevp2dPk09xg",
+  authDomain: "javaair-6badb.firebaseapp.com",
+  projectId: "javaair-6badb",
+  storageBucket: "javaair-6badb.appspot.com",
+  messagingSenderId: "649988352169",
+  appId: "1:649988352169:web:6c681b02baf7773faae1b8"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App flights={FLIGHTS} />
   </React.StrictMode>
 );
 

@@ -40,11 +40,29 @@
       </nav>
     </header>
     <main>
-      <h1>Who are you?</h1>
-      <article class="login-chooser">
-        <a href="loginWorker.html">Worker</a>
-        <a href="loginUser.html">User</a>
-      </article>
+      <div class="login">
+        <h1>Login</h1>
+        <article class="login-chooser">
+          <button>Worker</button>
+          <button>User</button>
+        </article>
+        <article class="login-container">
+          <section class="login-window">
+            <form method="post">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" name="username" id="uname" required />
+              <label for="psw"><b>Password</b></label>
+              <input type="password" name="password" id="psw" required />
+              <!-- <button id="login-btn">Login</button> -->
+              <a href="loggedInUser.html">Login</a>
+            </form>
+            <!-- <p>Don't have an account? <a id="create-acc-nav">Create one</a>.</p> -->
+            <p>OR</p>
+            <!-- <button id="sign-up-btn">Sign Up</button> -->
+            <a href="signup.html">Sign Up</a>
+          </section>
+        </article>
+      </div>
     </main>
     <footer>
       <div class="footer-content">

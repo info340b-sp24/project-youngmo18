@@ -48,7 +48,7 @@ export function Navigation(props) {
     } else {
       setHistory("hidden");
       setPost("hidden");
-      setBook("show");
+      setBook("hidden");
       setLogin("show");
       setLogout("hidden");
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function HistoryCard(props) {
   let flight = props.historyObject;
@@ -6,10 +6,11 @@ function HistoryCard(props) {
     <>
       <li>
         <article>
+          <p>Flight number: {flight.flightID}</p>
           <p>From: {flight.from}</p>
           <p>To: {flight.to}</p>
-          <p>Time: {flight.date}</p>
-          <p>-------------------</p>
+          <p>Time: {flight.departureDate}</p>
+          <p>------------------------------------------</p>
         </article>
       </li>
     </>
@@ -17,18 +18,25 @@ function HistoryCard(props) {
 }
 
 function HistoryList(props) {
-  // const [flights, setFlights] = useState(props.flightData);
-  let cardList = props.historyData.map((flight) => {
-    return (<HistoryCard historyObject={flight} />);
-  });
+  const [containerClass, setContainerClass] = useState(
+    "history-container minimum-history-container"
+  );
+
+  useEffect(() => {
+    if (props.historyData.length > 2) {
+      setContainerClass("history-container");
+    }
+  }, [props.historyData]);
+
+  let cardList = props.historyData.map((flight) => (
+    <HistoryCard key={flight.key} historyObject={flight} />
+  ));
 
   return (
     <div className="history">
-      <div className="history-container">
+      <div className={containerClass}>
         <h1>Booking History</h1>
-        <ul>
-          {cardList}
-        </ul>
+        <ul>{cardList}</ul>
       </div>
     </div>
   );

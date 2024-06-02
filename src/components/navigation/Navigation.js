@@ -1,95 +1,93 @@
 import React, { useState, useEffect } from "react";
 import { Hamburger } from "./Hamburger";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export function Navigation(props) {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  const [history, setHistory] = useState('hidden');
-  const [post, setPost] = useState('hidden');
-  const [login, setLogin] = useState('show');
-  const [logout, setLogout] = useState('hidden');
+  const [navClass, setNavClass] = useState("nav");
+  const [navClassContainer, setNavClassContainer] = useState("menu");
+  const [history, setHistory] = useState("hidden");
+  const [post, setPost] = useState("hidden");
+  const [book, setBook] = useState("hidden");
+  const [login, setLogin] = useState("show");
+  const [logout, setLogout] = useState("hidden");
+  const navigate = useNavigate();
 
-  const toggleHamburger = () =>{
-    setHamburgerOpen(!hamburgerOpen)
-  }
-  // not too sure how to make humburger navigation work yet with react
-
-  // let loggedIn = localStorage.getItem('loggedIn');
-  // let history = 'hidden';
-  // let post = 'hidden';
-  // let login = 'show';
-  // let logout = 'hidden';
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+    if (hamburgerOpen) {
+      setNavClass("nav-open");
+      setNavClassContainer("menu open");
+    } else {
+      setNavClass("nav");
+      setNavClassContainer("menu");
+    }
+  };
 
   const handleLogoutChange = () => {
-    console.log("logout");
-    localStorage.removeItem('loggedIn');
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("username");
+    navigate("/login");
     window.location.reload();
   };
 
   useEffect(() => {
     let loggedIn = localStorage.getItem("loggedIn");
-    if (loggedIn === 'user') {
-      setHistory('show');
-      setPost('hidden');
-      setLogin('hidden');
-      setLogout('show');
-    } else if (loggedIn === 'worker') {
-      setHistory('hidden');
-      setPost('show');
-      setLogin('hidden');
-      setLogout('show');
+    if (loggedIn === "user") {
+      setHistory("show");
+      setPost("hidden");
+      setBook("show");
+      setLogin("hidden");
+      setLogout("show");
+    } else if (loggedIn === "worker") {
+      setHistory("hidden");
+      setPost("show");
+      setBook("hidden");
+      setLogin("hidden");
+      setLogout("show");
     } else {
-      setHistory('hidden');
-      setPost('hidden');
-      setLogin('show');
-      setLogout('hidden');
+      setHistory("hidden");
+      setPost("hidden");
+      setBook("show");
+      setLogin("show");
+      setLogout("hidden");
     }
-    // if (loggedIn === 'user') {
-    //   console.log("success");
-    //   history = 'show';
-    //   post = 'hidden';
-    //   login = 'hidden';
-    //   logout = 'show';
-    // } else if (loggedIn === 'worker') {
-    //   history = 'hidden';
-    //   post = 'show';
-    //   login = 'hidden';
-    //   logout = 'show';
-    // } else {
-    //   history = 'hidden';
-    //   post = 'hidden';
-    //   login = 'show';
-    //   logout = 'hidden';
-    // }
   }, []);
 
   return (
     <>
       <nav>
-        <h1>JavaAir</h1>
-        <div className="nav">
-          <ul>
-            <li>
-              <a href="intro.html">Home</a>
-            </li>
-            <li>
-              <a href="index.html">Book</a>
-            </li>
-            <li className={history}>
-              <a href="bookingHistory.html">History</a>
-            </li>
-            <li className={post}>
-              <a href="loggedInWorker.html">Post</a>
-            </li>
-            <li className={login}>
-              <a href="login.html">Login</a>
-            </li>
-            <li className={logout}>
-              <p href="login.html" className="logout" onClick={handleLogoutChange}>Logout</p>
-            </li>
-          </ul>
-        </div>
-        <div className="hamburger" onClick={toggleHamburger}>
-          <Hamburger />
+        <h1 className="title">
+          <Link to="/book">JavaAir</Link>
+        </h1>
+        <div className={navClassContainer}>
+          <div className="hamburger" onClick={toggleHamburger}>
+            <Hamburger />
+          </div>
+          <div className={navClass}>
+            <ul>
+              <li>
+                <NavLink to="/intro">Home</NavLink>
+              </li>
+              <li className={book}>
+                <NavLink to="/book">Book</NavLink>
+              </li>
+              <li className={history}>
+                <NavLink to="/history">History</NavLink>
+              </li>
+              <li className={post}>
+                <NavLink to="/post">Post</NavLink>
+              </li>
+              <li className={login}>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+              <li className={logout}>
+                <button className="logout" onClick={handleLogoutChange}>
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>

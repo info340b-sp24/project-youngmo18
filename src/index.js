@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import FLIGHTS from './data/flights.json';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
+import "./custom-bootstrap.scss";
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -15,17 +18,21 @@ const firebaseConfig = {
   projectId: "javaair-6badb",
   storageBucket: "javaair-6badb.appspot.com",
   messagingSenderId: "649988352169",
-  appId: "1:649988352169:web:6c681b02baf7773faae1b8"
+  appId: "1:649988352169:web:6c681b02baf7773faae1b8",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+
 // import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App flights={FLIGHTS} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 

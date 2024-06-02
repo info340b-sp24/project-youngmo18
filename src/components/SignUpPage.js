@@ -1,6 +1,6 @@
 import React from "react";
-import { Navigation } from './navigation/Navigation';
-import { Footer } from './footer/Footer';
+import { Navigation } from "./navigation/Navigation";
+import { Footer } from "./footer/Footer";
 import { SignUpForm } from "./form/SignUpForm";
 
 export function SignUpPage() {
@@ -10,7 +10,10 @@ export function SignUpPage() {
         <Navigation />
       </header>
       <main>
-        <SignUpForm />
+        <div className="signup">
+          <h1>Sign Up</h1>
+          <SignUpForm />
+        </div>
       </main>
       <footer>
         <Footer />

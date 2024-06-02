@@ -1,35 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 function FlightCard(props) {
-  console.log(props.flightObject);
+  const navigate = useNavigate();
   let flight = props.flightObject;
+  const navToDetail = () => {
+    navigate(`/flight_detail/${flight.key}`);
+  };
+
+  const firstImage = Array.isArray(flight.images) && flight.images.length > 0 ? flight.images[0] : '';
+
   return (
-    <div>
-      <img src={flight.img} alt={flight.img} />
+    <div onClick={navToDetail}>
+      <img src={firstImage} alt="Flight scenery" />
       <p>From: {flight.from}</p>
       <p>To: {flight.to}</p>
-      <p>Date: {flight.date}</p>
+      <p>Date: {flight.departureDate}</p>
     </div>
   );
 }
 
 function FlightList(props) {
-  // const [flights, setFlights] = useState(props.flightData);
-  console.log("FLIGHT LIST ____________________");
-  console.log(props.flightData);
+  const flightData = props.flightData;
 
-  let cardList = props.flightData.map((flight) => {
-    return (<FlightCard flightObject={flight} />);
-  });
+  const cardList = flightData.length > 0 ? flightData.map(flightObject => (
+      <FlightCard key={flightObject.key} flightObject={flightObject} />
+    ))
+    : <p className="error-msg">No Flights Available</p>;
 
   return (
     <>
       <section className="places-section">
-          <h2>✈️ Available Flights ✈️</h2>
-          <article className="searchFlightsForm">
-            {cardList}
-          </article>
-        </section>
+        <h2>✈️ Available Flights ✈️</h2>
+        <article className="searchFlights">
+          {cardList}
+        </article>
+      </section>
     </>
   );
 }

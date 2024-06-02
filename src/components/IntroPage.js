@@ -1,10 +1,10 @@
-import React from 'react';
-import { Navigation } from './navigation/Navigation';
-import { Footer } from './footer/Footer';
+import React from "react";
+import { Navigation } from "./navigation/Navigation";
+import { Footer } from "./footer/Footer";
 
 export function IntroPage() {
   return (
-    <div className='home'>
+    <div className="home">
       <header>
         <Navigation />
       </header>
@@ -19,6 +19,5 @@ export function IntroPage() {
         <Footer />
       </footer>
     </div>
-
   );
 }

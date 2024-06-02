@@ -1,6 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: linear-gradient(0deg, rgba(224,123,63,1) 0%, rgba(228,176,146,1) 0%, rgba(255,244,237,1) 0%, rgba(119,165,222,1) 100%);
-  font-family: "Fira Sans", sans-serif;  margin: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(224, 123, 63, 1) 0%,
+    rgba(228, 176, 146, 1) 0%,
+    rgba(255, 244, 237, 1) 0%,
+    rgba(119, 165, 222, 1) 100%
+  );
+  font-family: "Fira Sans", sans-serif;
+  margin: 0;
   padding: 0;
   min-height: 100vh;
   display: flex;
@@ -18,14 +31,16 @@ main {
 
 nav {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   color: white;
+  height: 102.5px;
 }
 
-button {
+button,
+#sign-up-btn {
   padding: 10px 20px;
-  /* background-color: #76bed6; */
-  background-color: #008CBA;
+
+  background-color: #008cba;
   color: white;
   border: none;
   cursor: pointer;
@@ -33,7 +48,8 @@ button {
   font-weight: bold;
 }
 
-button:not(.login-chooser button):hover {
+button:not(.login-chooser button, .signup-chooser button, .logout):hover,
+#sign-up-btn:hover {
   background-color: #e99b26;
 }
 
@@ -43,17 +59,29 @@ footer {
   padding: 10px;
   width: 100%;
   margin-top: auto;
-  /* position:absolute;
-  left:0;
-  bottom:0;
-  right:0; */
 }
 
-input {
+input:not(#images),
+.img-input-container {
   border: none;
   background-color: rgb(225, 223, 223);
   height: 35px;
   border-radius: 35px;
+}
+
+p {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.img-input-container {
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+
+#images {
+  width: 200px;
 }
 
 li {
@@ -62,9 +90,11 @@ li {
 
 h2 {
   font-size: 30px;
+  margin-top: 24.9px;
+  margin-bottom: 24.9px;
 }
 
-nav h1{
+nav h1 {
   margin-left: 50px;
 }
 
@@ -80,6 +110,8 @@ nav ul {
   top: 0;
   padding-right: 0;
   padding-left: 50px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 header nav a {
@@ -87,15 +119,21 @@ header nav a {
   color: white;
   margin: 0 10px;
   padding: 0px;
-  /* text-shadow: 1px 1px #153c43; */
+  margin-top: 20px;
+}
+
+.title {
+  margin-top: 15px;
 }
 
 .logout {
   font-family: "Fire Sans", sans-serif;
-  font-size: 17px;
+  font-size: 13px;
   color: white;
   margin: 0 10px;
   cursor: pointer;
+  padding: 0;
+  background: none;
 }
 
 footer a {
@@ -103,7 +141,10 @@ footer a {
   color: #153c43;
 }
 
-#uname, #psw, #unameSign, #pswSign {
+#uname,
+#psw,
+#unameSign,
+#pswSign {
   width: 40%;
   padding: 8px;
   margin-top: 2px;
@@ -113,7 +154,13 @@ footer a {
   margin-bottom: 15px;
 }
 
-#from, #to, #departureDate {
+#from,
+#to,
+#departure_date,
+#flight_id,
+#departure_time,
+#arrival_time,
+#quantity {
   text-align: center;
 }
 
@@ -126,12 +173,15 @@ footer a {
   align-items: center;
 }
 
-.section-flight, .contact-section {
+.section-flight,
+.contact-section {
   display: flex;
   justify-content: center;
 }
 
-.flight-container, .contact-container, .post-container {
+.flight-container,
+.contact-container,
+.post-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -142,12 +192,18 @@ footer a {
   border-radius: 3%;
 }
 
+.post-container {
+  margin-bottom: 182.5px;
+  height: 850px;
+}
+
 .places-section {
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-#search-flights-form, #post-flights-form {
+#search-flights-form,
+#post-flights-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -155,7 +211,12 @@ footer a {
   font-size: 18px;
 }
 
-.searchFlightsForm div {
+.searchFlights {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.searchFlights div {
   width: 280px;
   height: 330px;
   background-color: white;
@@ -163,7 +224,7 @@ footer a {
   color: black;
 }
 
-.searchFlightsForm img {
+.searchFlights img {
   margin-top: 30px;
   margin-bottom: 10px;
   width: 180px;
@@ -171,23 +232,20 @@ footer a {
   border-radius: 20px;
 }
 
-.searchFlightsForm p {
+.searchFlights p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.signup-container {
-  margin-bottom: 290px;
-}
-
-.login-window, .signup-container {
+.login-window,
+.signup-window {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 500px; */
 }
 
-.login-window form, .signup-container form {
+.login-window form,
+.signup-window form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,9 +255,9 @@ footer a {
   gap: 10px;
 }
 
-.intro a, .signup-container a {
+.intro a {
   padding: 10px 20px;
-  background-color: #008CBA;
+  background-color: #008cba;
   color: white;
   border: none;
   cursor: pointer;
@@ -223,43 +281,62 @@ footer a {
   color: black;
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 50%;
+  width: 600px;
 }
 
 .flight-detail-card img {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   border-radius: 20px;
 }
 
-.login {
+.login,
+.signup {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-form {
-  margin-bottom: 100px;
+.login-form,
+.signup-form {
+  margin-bottom: 68px;
 }
 
-.login-form, .signup-container {
+.login-form,
+.signup-form {
   background-color: white;
   border-radius: 10px;
   color: black;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 400px;
 }
 
-.login-chooser {
+.error-login {
+  background-color: rgb(239, 142, 142);
+}
+
+.error-msg {
+  color: red;
+}
+
+.success-msg {
+  color: green;
+}
+
+.login-chooser,
+.signup-chooser {
   display: flex;
   justify-content: center;
   padding-top: 30px;
 }
 
-.login-chooser button {
+.login-chooser button,
+.signup-chooser button {
   text-decoration: none;
   width: 100px;
   border-radius: 0px;
   color: white;
-  border-style: solid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,13 +346,15 @@ footer a {
   background-color: #76bed6;
 }
 
-.login-chooser :first-child {
+.login-chooser :first-child,
+.signup-chooser :first-child {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border-right-width: 0px;
 }
 
-.login-chooser :last-child {
+.login-chooser :last-child,
+.signup-chooser :last-child {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border-left-width: 0px;
@@ -285,38 +364,49 @@ footer a {
   background-color: #e99b26;
 }
 
-/* .login-chooser button:nth-child(2):hover {
-  background-color: #76bed6;
-} */
-
-.login-container{
+.login-container,
+.signup-container {
   padding-top: 50px;
-  height: 300px;
+  height: 365px;
 }
 
-#login-btn, #signup-btn {
+#sign-up-btn {
+  font-size: 13.3333px;
+  text-decoration: none;
+}
+
+#signup-btn {
+  margin-top: 40px;
+}
+
+#login-btn,
+#signup-btn {
   margin-bottom: 25px;
 }
 
 body main h1 {
   font-size: 40px;
+  margin-top: 26.8px;
+  margin-bottom: 26.8px;
 }
 
 .home main {
-  /* background-image: url("../img/wallpaper10.jpg"); */
-  /* background-size: cover; */
   padding-bottom: 300px;
 }
 
 .home main h1 {
   font-size: 60px;
   padding-top: 100px;
+  margin-top: 29.1px;
+  margin-bottom: 29.1px;
+  font-weight: 700;
 }
 
 .home main a {
   border-radius: 0;
   background-color: white;
-  color: #008CBA;
+  color: #008cba;
+  width: 150px;
 }
 
 .hidden {
@@ -332,8 +422,19 @@ body main h1 {
 }
 
 .hamburger {
+  width: 2rem;
+  height: 2rem;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  margin-right: 10px;
+}
+
+.burger {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .nav {
@@ -351,47 +452,95 @@ body main h1 {
   color: black;
   border-radius: 10px;
   width: 60%;
+}
+
+.minimum-history-container {
   height: 600px;
 }
 
-.searchFlightsForm div {
+.searchFlights div {
   margin-bottom: 10px;
 }
 
+.menu {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+  height: 200px;
+  width: 100px;
+
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.open {
+  background-color: rgb(146, 149, 228);
+}
+
+.nav-open ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+}
+
+nav ul li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 13px;
+}
+
+.searchFlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (min-width: 400px) {
-  .searchFlightsForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .flight-detail-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 400px;
   }
+
+  .flight-detail-card img {
+    width: 350px;
+    height: 350px;
+  }
+
   .flights-list div {
-    margin-bottom: 30px
+    margin-bottom: 30px;
   }
-  nav ul li {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  .login-form,
+  .signup-form {
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 13px;
+    width: 400px;
   }
-  .nav {
-    display: none;
-  }
-  #uname, #psw, #unameSign, #pswSign {
+
+  #uname,
+  #psw,
+  #unameSign,
+  #pswSign {
     width: 60%;
   }
 }
 
 @media (min-width: 800px) {
-  .searchFlightsForm {
+  .searchFlights {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .flight-detail-card {
+    width: 600px;
   }
   .flight-detail-card img {
     width: 450px;
@@ -410,11 +559,33 @@ body main h1 {
   .nav {
     display: contents;
   }
-  .login-form, .signup-container {
+
+  .login-form,
+  .signup-form {
     margin-left: 300px;
     margin-right: 300px;
+    width: 600px;
   }
-  #uname, #psw, #unameSign, #pswSign {
+  #uname,
+  #psw,
+  #unameSign,
+  #pswSign {
     width: 60%;
+  }
+  .logout {
+    font-size: 17px;
+  }
+  .menu {
+    position: relative;
+
+    background: none;
+    height: auto;
+    width: auto;
+  }
+  .nav-open ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: end;
   }
 }

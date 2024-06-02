@@ -36,6 +36,10 @@ nav {
   height: 102.5px;
 }
 
+a, p, button, h1 {
+  font-family: "Fira Sans", sans-serif;
+}
+
 button,
 #sign-up-btn {
   padding: 10px 20px;

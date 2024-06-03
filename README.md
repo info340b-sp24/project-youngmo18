@@ -1,4 +1,4 @@
-# INFO 340 Project
+# INFO 340 Project (DEMO VIDEO BELOW)
 
 This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
 <div>
